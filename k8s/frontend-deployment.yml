@@ -21,3 +21,5 @@ spec:
         ports:
         - containerPort: 80
           name: basic3tier-ui
+      imagePullSecrets:
+       - name: regcred

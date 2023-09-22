@@ -17,7 +17,9 @@ spec:
     spec:
       containers:
       - image: 517344335201.dkr.ecr.ap-southeast-2.amazonaws.com/codingdojo_ecr:basic3tier-api
-        name: basic3tier-api
+        name: basic3tier-api      
         ports:
         - containerPort: 81
           name: basic3tier-api
+      imagePullSecrets:
+       - name: regcred
