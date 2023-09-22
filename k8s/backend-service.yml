@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: basic3tier
-  name: backend-service
+    app: basic3tier-api
+  name: basic3tier-api
   namespace: basic3tier
 spec:
   type: NodePort
@@ -13,4 +13,4 @@ spec:
     targetPort: 80
     nodePort: 31001
   selector:
-    app: basic3tier
+    app: basic3tier-api
