@@ -16,7 +16,7 @@ spec:
         app: basic3tier
     spec:
       containers:
-      - image: 517344335201.dkr.ecr.ap-southeast-2.amazonaws.com/codingdojo_ecr:basic3tier-ui
+      - image: arnomarais/codingdojo:basic3tier-ui
         name: basic3tier-ui
         ports:
         - containerPort: 80
