@@ -3,13 +3,13 @@ kind: Service
 metadata:
   labels:
     app: basic3tier
-  name: frontend-service
+  name: basic3tier-ui
   namespace: basic3tier
 spec:
   type: NodePort
   ports:
   - name: "frontend-service"
-    port: 80
+    port: 5000
     targetPort: 80
     nodePort: 31001
   selector:
