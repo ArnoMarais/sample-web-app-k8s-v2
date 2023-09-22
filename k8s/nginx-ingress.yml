@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: vote-ingress
+  namespace: basic3tier
+  annotations:
+spec:
+  ingressClassName: 'nginx'
+  rules:
+  - host: ip-172-31-25-130.ap-southeast-2.compute.internal
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: basic3tier
+            port:
+              number: 31001

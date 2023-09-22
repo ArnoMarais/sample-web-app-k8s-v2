@@ -1,0 +1,65 @@
+version: "3.9"
+
+services:
+  basic-3tier-postgres:
+    container_name: basic-3tier-postgres
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: basic3tier
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - back-tier
+
+  pgadmin:
+    container_name: my-pgadmin
+    image: dpage/pgadmin4:latest
+    ports:
+      - 82:80
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@pgadmin.com
+      PGADMIN_DEFAULT_PASSWORD: admin123
+    depends_on:
+      - basic-3tier-postgres
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin/data
+    networks:
+      - back-tier
+
+  backend:
+    container_name: basic3tier-api
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "81:80"
+    depends_on:
+      - basic-3tier-postgres
+    environment:
+      ConnectionStrings__Basic3Tier: "Host=basic-3tier-postgres;Port=5432;Database=basic3tier;Username=postgres;Password=admin123"
+    networks:
+      - back-tier
+
+  frontend:
+    container_name: basic3tier-ui
+    build:
+      context: ./ui
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    networks:
+      - front-tier
+
+volumes:
+  postgres-data:
+  pgadmin-data:
+
+networks:
+  front-tier:
+    driver: bridge
+  back-tier:
+    driver: bridge
