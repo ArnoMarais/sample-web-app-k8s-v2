@@ -20,4 +20,4 @@ spec:
         name: basic3tier-ui
         ports:
         - containerPort: 80
-          name: basic3tier
+          name: basic3tier-ui
