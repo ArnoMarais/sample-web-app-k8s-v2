@@ -14,6 +14,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: basic3tier-ui
+            name: basic3tier
             port:
               number: 5000
