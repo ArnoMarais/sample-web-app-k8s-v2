@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: basic3tier
-  name: basic3tier-ui
+  name: basic3tier-ui-service
   namespace: basic3tier
 spec:
   type: NodePort
