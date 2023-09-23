@@ -16,7 +16,7 @@ spec:
         app: basic3tier
     spec:
       containers:
-      - image: arnomarais/codingdojo:basic3tier-api
+      - image: arnomarais/k8s-api:v2
         name: basic3tier-api      
         ports:
         - containerPort: 80
