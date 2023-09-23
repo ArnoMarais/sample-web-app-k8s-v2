@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: basic3tier-db
+  namespace: basic3tier
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: basic3tier-db
+  template:
+    metadata:
+      labels:
+        app: basic3tier-db
+    spec:
+      containers:
+      - image: postgres:latest
+        name: postgres
+        env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: admin123
+        - name: POSTGRES_DB
+          value: basic3tier
+        ports:
+        - containerPort: 5432
+          name: basic3tier-db
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data
+          name: postgres-data
+      volumes:
+      - name: postgres-data

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: basic3tier-ui
+  namespace: basic3tier
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: basic3tier-ui
+  template:
+    metadata:
+      labels:
+        app: basic3tier-ui
+    spec:
+      containers:
+      - image: arnomarais/codingdojo:basic3tier-ui
+        name: basic3tier-ui
+        ports:
+        - containerPort: 80
