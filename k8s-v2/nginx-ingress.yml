@@ -15,4 +15,4 @@ spec:
           service:
             name: basic3tier-ui-service
             port:
-              number: 30080
+              number: 80
