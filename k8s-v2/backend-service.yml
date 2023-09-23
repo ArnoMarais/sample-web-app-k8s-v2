@@ -8,7 +8,7 @@ spec:
   selector:
     app: basic3tier-api
   ports:
-  - protocol: TCP
+  - name: "basic3tier-api-service"
     port: 8080
     targetPort: 8080
     nodePort: 30081
