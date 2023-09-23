@@ -6,7 +6,7 @@ metadata:
   name: basic3tier-api
   namespace: basic3tier
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: basic3tier
