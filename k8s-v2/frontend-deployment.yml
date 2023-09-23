@@ -14,7 +14,7 @@ spec:
         app: basic3tier-ui
     spec:
       containers:
-      - image: arnomarais/codingdojo:basic3tier-ui
+      - image: arnomarais/k8s-ui:v1
         name: basic3tier-ui
         ports:
         - containerPort: 80
