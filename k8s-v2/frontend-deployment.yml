@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: basic3tier-ui
+  name: basic3tier
   namespace: basic3tier
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: basic3tier-ui
+      app: basic3tier
   template:
     metadata:
       labels:
-        app: basic3tier-ui
+        app: basic3tier
     spec:
       containers:
       - image: arnomarais/k8s-ui:v1
-        name: basic3tier-ui
+        name: basic3tier
         ports:
         - containerPort: 80

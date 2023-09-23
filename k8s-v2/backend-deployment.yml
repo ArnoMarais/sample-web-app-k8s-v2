@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: basic3tier-api
+  name: basic3tier
   namespace: basic3tier
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: basic3tier-api
+      app: basic3tier
   template:
     metadata:
       labels:
-        app: basic3tier-api
+        app: basic3tier
     spec:
       containers:
       - image: arnomarais/k8s-api:v1
