@@ -15,7 +15,8 @@ The frontend application code can be accessed under “ui” folder.
 
 Question 1 –
 
-1.	Write a Dockerfile to create a Docker image of the backend application and push it to the Docker registry (DockerHub or ECR). 
+1.	Write a Dockerfile to create a Docker image of the backend application and push it to the Docker registry (DockerHub or ECR).
+    
 Dockerfile
  ![image](https://github.com/ArnoMarais/sample-web-app-k8s-v2/assets/22773627/69b1e17f-f4f4-41ae-881c-c00d95f52baf)
 
