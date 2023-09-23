@@ -7,13 +7,12 @@ metadata:
 spec:
   ingressClassName: 'nginx'
   rules:
-  - host: ip-172-31-25-130.ap-southeast-2.compute.internal
-    http:
+  - http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: basic3tier
+            name: basic3tier-ui
             port:
               number: 5000

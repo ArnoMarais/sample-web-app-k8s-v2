@@ -10,7 +10,7 @@ spec:
   ports:
   - name: "backend-service"
     port: 5001
-    targetPort: 8080
+    targetPort: 80
     nodePort: 31001
   selector:
     app: basic3tier-api

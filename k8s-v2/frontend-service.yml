@@ -8,7 +8,7 @@ spec:
   selector:
     app: basic3tier-ui
   ports:
-  - protocol: TCP
-    port: 80
+  - name: "frontend-service"
+    port: 5000
     targetPort: 80
     nodePort: 30080

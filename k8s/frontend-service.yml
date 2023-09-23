@@ -13,4 +13,4 @@ spec:
     targetPort: 80
     nodePort: 31000
   selector:
-    app: basic3tier
+    app: basic3tier-ui
